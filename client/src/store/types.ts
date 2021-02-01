@@ -1,5 +1,3 @@
-import { type } from "os"
-
 export const SET_CATEGORIES = 'SET_CATEGORY'
 export const SET_CATEGORY_TO_UPDATE = 'SET_CATEGORY_TO_UPDATE'
 export const SET_CATEGORY_SELECTED_FLAG = 'SET_CATEGORY_SELECTED_FLAG'

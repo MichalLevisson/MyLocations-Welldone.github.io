@@ -1,6 +1,5 @@
 import React from 'react'
 import { ICategory } from '../../../../type'
-import DeleteImg from '../../../../assets/trash.svg'
 
 import { Modal, Button } from 'react-bootstrap'
 
