@@ -14,18 +14,18 @@ const ViewCategory: React.FC<Props> = ({ categoryToUpdate }) => {
     return (
       <Modal
         show={viewModalShow}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        size='lg'
+        aria-labelledby='contained-modal-title-vcenter'
         centered
       >
         <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id='contained-modal-title-vcenter'>
             <p>View category details</p>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>Name : {categoryToUpdate.name}</p>
-          <button className="btn btn-outline-success" onClick={(e) => setViewModalShow(false)}>Close</button>
+          <button className='btn btn-outline-success' onClick={(e) => setViewModalShow(false)}>Close</button>
         </Modal.Body>
       </Modal>
     );

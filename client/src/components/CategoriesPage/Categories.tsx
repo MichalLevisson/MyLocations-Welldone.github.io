@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { ICategory } from '../../type'
 import { setCategories, setCategorySelectedFlag, setCategoryToUpdate } from '../../store/actions'
 import { SystemState } from '../../store/types'
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { Dispatch } from "redux"
+import { useSelector, shallowEqual, useDispatch } from 'react-redux'
+import { Dispatch } from 'redux'
 import { ListGroup } from 'react-bootstrap'
 import Header from '../Layout/Header/Header'
+import Footer from '../Layout/Footer/Footer'
 
-const MyLocations: React.FC = () => {
+const CategoriesPage: React.FC = () => {
 
   const storageCategories = JSON.parse(localStorage.getItem('categories') || '0');
 
@@ -45,24 +46,27 @@ const MyLocations: React.FC = () => {
   }
 
   return (
-    <main className='App'>
-      <Header title='Categories' />
-      <ListGroup className='categoriesList'>
-      {categoriesState.length ?
-        categoriesState.map(category => 
-          <ListGroup.Item
-            className='categoriesListItem'
-            onClick={() => handleSelectedCategory(category._id)}
-            active={categorySelectedFlagState && categoryToUpdateState._id === category._id}>
-            {category.name}
-          </ListGroup.Item>) :
-        <h3>Seems like you dont have any categories saved yet... {<br></br>}
-            Create categories using the add option at the header!
-        </h3>
-      }
-      </ListGroup>
-    </main>
+    <>
+      <main className='App'>
+        <Header title='Categories' page='categories' />
+        <ListGroup className='categoriesList'>
+        {categoriesState.length ?
+          categoriesState.map(category => 
+            <ListGroup.Item
+              className='categoriesListItem'
+              onClick={() => handleSelectedCategory(category._id)}
+              active={categorySelectedFlagState && categoryToUpdateState._id === category._id}>
+              {category.name}
+            </ListGroup.Item>) :
+          <h3>Seems like you dont have any categories saved yet... {<br></br>}
+              Create categories using the add option at the header!
+          </h3>
+        }
+        </ListGroup>
+      </main>
+      <Footer />
+    </>
   );
 }
 
-export default MyLocations;
+export default CategoriesPage;

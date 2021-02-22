@@ -1,3 +1,20 @@
+export interface ILocation {
+  _id: string
+  name: string
+  address: string
+  lat: number
+  lon: number
+  category_id: string[]
+}
+
+interface LocationProps {
+  promotion: ILocation
+}
+
+interface LocationsProps {
+  promotions: ILocation[]
+}
+
 export interface ICategory {
   _id: string
   name: string

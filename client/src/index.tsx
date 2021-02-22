@@ -1,8 +1,12 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MyLocations from './components/MyLocationsPage/MyLocations';
-import Categories from './components/CategoriesPage/Categories'
+import HomePage from './components/HomePage/Home';
+import CategoriesPage from './components/CategoriesPage/Categories'
+import LocationsPage from './components/‏‏LocationsPage/Locations'
 import reportWebVitals from './reportWebVitals';
 import { store } from './store';
 import { history } from './store/history';
@@ -17,8 +21,9 @@ const render = () => {
     <Router history={history}>
       <Provider store={store}>
         <React.Fragment>
-          <Route exact path="/" component={MyLocations} />
-          <Route exact path="/categories" component={Categories} />
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/categories' component={CategoriesPage} />
+          <Route exact path='/locations' component={LocationsPage} />
         </React.Fragment>
       </Provider>
     </Router>,  document.getElementById('root'))

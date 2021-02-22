@@ -51,13 +51,13 @@ code {
   margin-right: 5px;
 }
 
-.categoriesList {
+.categoriesList , .locationsList {
   margin: auto;
   width: 60%;
   margin-top: 20px;
 }
 
-.categoriesListItem {
+.categoriesListItem , .locationsListItem{
   cursor: pointer;
 }
 

@@ -10,7 +10,7 @@ type Props = {
 const EditCategory: React.FC<Props> = ({ editCategory, categoryToUpdate }) => {
 
   const [formData, setFormData] = useState<ICategory | {}>()
-  const [modalShow, setModalShow] = React.useState(false);
+  const [editModalShow, setEditModalShow] = React.useState(false);
 
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({ 
@@ -21,17 +21,17 @@ const EditCategory: React.FC<Props> = ({ editCategory, categoryToUpdate }) => {
 
   return (
     <>
-      <Button variant='outline-success btn-action' onClick={() => setModalShow(true)}>
+      <Button variant='outline-success' onClick={() => setEditModalShow(true)}>
          Edit
       </Button>
       <Modal
-        show={modalShow}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        show={editModalShow}
+        size='lg'
+        aria-labelledby='contained-modal-title-vcenter'
         centered
       >
         <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id='contained-modal-title-vcenter'>
             Edit category - {categoryToUpdate.name}
           </Modal.Title>
         </Modal.Header>
@@ -43,9 +43,9 @@ const EditCategory: React.FC<Props> = ({ editCategory, categoryToUpdate }) => {
                 <input onChange={handleForm} type='text' id='name' defaultValue={categoryToUpdate.name} />
               </div>
             </div>
-            <button disabled={formData === undefined? true : false} className="btn btn-success">Update</button>
+            <button disabled={formData === undefined? true : false} className='btn btn-success'>Update</button>
           </form>
-          <button className="btn btn-outline-danger" onClick={(e) => setModalShow(false)}>Cancel</button>
+          <button className='btn btn-outline-danger' onClick={(e) => setEditModalShow(false)}>Cancel</button>
         </Modal.Body>
       </Modal>
      </>
